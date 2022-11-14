@@ -1,6 +1,6 @@
 .content > header {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .container{
@@ -15,4 +15,32 @@
 .text2{
     font-size: 30px;
     text-align: center;
+}
+
+.lebel-new{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.navbar-nav{
+    margin-left: auto;
+    gap: 1rem;
+    margin-right: 20px;
+}
+
+.navbar-nav span{
+    font-size: 20px;
+}
+
+.navbar-nav a{
+    font-size: 20px;
+}
+
+.card{
+    width: 50%;
+    margin: auto;
+}
+
+.card-user{
+    margin-left: 250px;
 }

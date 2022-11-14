@@ -3,23 +3,31 @@
 {% block header %}
   <h1>{% block title %}Posts{% endblock %}</h1>
   {% if g.user %}
-    <a type="button" href="{{ url_for('blog.create') }}" class="btn btn-primary">New</a>
+    <a type="button" href="{{ url_for('blog.create') }}" class="btn btn-primary mb-5 mt-4">New</a>
   {% endif %}
 {% endblock %}
 
 {% block content %}
   {% for post in posts %}
     <article class="post">
-      <header>
-        <div>
-          <h1>{{ post['title'] }}</h1>
-          <div class="about">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+
+      <div class="card text-center mb-4">
+        <div class="card-header">
+          <ul class="nav nav-pills card-header-pills">
+            <li class="card-user">
+              <h4 class="card-title">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</h4>
+            </li>
+            <li class="nav-item ms-auto">
+              <a class="nav-link active" href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
+            </li>
+          </ul>
         </div>
-        {% if g.user['id'] == post['author_id'] %}
-          <a class="action" href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
-        {% endif %}
-      </header>
-      <p class="body">{{ post['body'] }}</p>
+        <div class="card-body">
+          
+          <h5 class="card-text">{{ post['title'] }}</h5>
+          <p class="card-text">{{ post['body'] }}</p>
+        </div>
+      </div>
     </article>
   {% endfor %}
 {% endblock %}
