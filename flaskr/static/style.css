@@ -34,7 +34,8 @@
 }
 
 .navbar-nav span {
-    font-size: 20px;
+    font-size: 15;
+    margin-top: 5px;
 }
 
 .navbar-nav a {

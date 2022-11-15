@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block header %}
-<h1>{% block title %}Posts{% endblock %}</h1>
+<h2>{% block title %}Posts{% endblock %}</h2>
 {% if g.user %}
 <a type="button" href="{{ url_for('blog.create') }}" class="btn btn-primary mb-5 mt-4">New</a>
 {% endif %}
